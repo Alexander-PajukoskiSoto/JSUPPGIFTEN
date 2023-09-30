@@ -1,6 +1,5 @@
 console.log("********ALLERGY START********")
 
-let allergyScore = 0;
 let allergyResult = "";
 function allergyCheck(allergyScore)
 {
