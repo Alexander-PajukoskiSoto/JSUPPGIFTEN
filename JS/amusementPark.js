@@ -30,7 +30,7 @@ const tickets = {
     'H32AZ123': "Verena Nardi",
   };
 
-  function ticketStatus(tickets, status)
+  function ticketStatus(status)
   {
         if(tickets[status] === null)
         {
@@ -44,6 +44,6 @@ const tickets = {
             return tickets[status] + " owns this ticket";
         }
   }
-  console.log(ticketStatus(tickets, '23LA9T41'))
-  console.log(ticketStatus(tickets, 'HZ123'))
-  console.log(ticketStatus(tickets, 'H32AZ123'))
+  console.log(ticketStatus('23LA9T41'))
+  console.log(ticketStatus('HZ123'))
+  console.log(ticketStatus('H32AZ123'))
