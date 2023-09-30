@@ -1,5 +1,6 @@
 console.log("********AMUSEMENT PARK START********")
 
+let emptyLet;
 // Visitor array
 const visitors = [];
 
@@ -85,7 +86,15 @@ const tickets = {
   };
 
 //   Function to check visitor GTC
-  const gtcVersion = visitor => visitor.gtc.version;
+  const gtcVersion = visitor =>{
+    if(visitor.hasOwnProperty('gtc'))
+    {
+      return visitor.gtc.version;
+    }
+    else{
+      return emptyLet;
+    }
+  } 
 
 //   Prints above function to console
   console.log(gtcVersion(visitorNew));
