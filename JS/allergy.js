@@ -1,6 +1,8 @@
 console.log("********ALLERGY START********")
 
+// Empty string for results
 let allergyResult = "";
+// Function checks allergy by removing different values from whole value
 function allergyCheck(allergyScore)
 {
   while(allergyScore>=0){
@@ -40,5 +42,6 @@ function allergyCheck(allergyScore)
     else{return "Tom is allergic to: "+allergyResult.trim();}
   }
 }
+// Prints above function
 console.log(allergyCheck(33));
 console.log("********ALLERGY END********")
