@@ -4,9 +4,11 @@ console.log("********BOOKSTORE START********")
 const disCombo = [];
 
 // Array where to compare best combos
-const bestDisCombo = []
+const bestDisCombo = [0, 0];
 
+let bookCount = 0;
 function bookCombos(a,b,c,d,e){
+    // function for bookCombo 4-1
     const bookCombo4To1 = (a,b,c,d,e) => {
         while(bookArray[1]>0){
             // 4combo
@@ -16,7 +18,7 @@ function bookCombos(a,b,c,d,e){
             bookArray[4]--;
             bookArray.sort();
             console.log(bookArray);
-            disCombo.push(.8);
+            disCombo.push(3.2);
         }
         // 3Combo
         while(bookArray[2]>0){
@@ -25,27 +27,42 @@ function bookCombos(a,b,c,d,e){
             bookArray[4]--;
             bookArray.sort();
             console.log(bookArray);
-            disCombo.push(.9);
+            disCombo.push(2.7);
         }
         // 2Combo
         while(bookArray[3]>0){
-            bookArray[2]--;
             bookArray[3]--;
             bookArray[4]--;
             bookArray.sort();
             console.log(bookArray);
-            disCombo.push(.9);
+            disCombo.push(1.9);
+        }
+        // 1Combo
+        while(bookArray[4]>0){
+            bookArray[4]--;
+            bookArray.sort();
+            console.log(bookArray);
+            disCombo.push(1);
         }
     }
-    // Saves all the values
+    // Array for input (the different books)
     let bookArray=[0,0,0,0,0];
-
+    // sums up all values to bookCount
+    let arrayI = 0;
+    
+    console.log(bookCount + " BOOK COUNT");
+    // Sets all values for looping-time B)
     bookArray[0]=a;
     bookArray[1]=b;
     bookArray[2]=c;
     bookArray[3]=d;
     bookArray[4]=e;
     bookArray.sort()
+    for(items in bookArray){
+        bookCount = bookCount + bookArray[arrayI];
+        console.log(bookCount + " bookCount")
+        arrayI+=1;
+    }
     // Left for teacher
     console.log(bookArray + " not a repeat");
     // 5-1 combo check
@@ -59,9 +76,26 @@ function bookCombos(a,b,c,d,e){
             bookArray[4]--;
             bookArray.sort();
             console.log(bookArray);
-            disCombo.push(.75);
+            disCombo.push(3.75);
         }
+        bookCombo4To1();
+         
+        // Sets all values for looping-time B) 2nd time 
+        bookArray[0]=a;
+        bookArray[1]=b;
+        bookArray[2]=c;
+        bookArray[3]=d;
+        bookArray[4]=e;
+        bookArray.sort()
+        console.log("ends here")
+        console.log(disCombo + " Combo:5-1");
 
+        // Adds sums of discounts to new array
+        while(disCombo[0]!== undefined){
+            bestDisCombo[0] = bestDisCombo[0]+disCombo[disCombo.length-1];
+            console.log(bestDisCombo);
+            disCombo.pop()
+        }
     }   
     // 4-1 combo check 
     {
@@ -74,8 +108,26 @@ function bookCombos(a,b,c,d,e){
         // Left for teacher
         console.log(bookArray + " not a repeat");
         // Left for teacher
-        console.log(disCombo);
+        console.log(disCombo + " Combo: 4-1");
     }
 
+        // Adds sums of discounts to new array
+    while(disCombo[0]!== undefined){
+        bestDisCombo[1] = bestDisCombo[1]+disCombo[disCombo.length-1];
+        console.log(bestDisCombo);
+        disCombo.pop()    
+    }
+
+    const result =(Math.min.apply(Math, bestDisCombo) / bookCount)* (8*bookCount);
+    //print cheapest cost with rounding
+    if(result-Math.floor(result) >= .5){
+        console.log(Math.ceil(result))
+    }
+    else{
+        console.log(Math.floor(result))
+    }
+    
 }
-bookCombos(3,3,4,4,1);
+bookCombos(3,7,4,7,1);
+
+console.log("********BOOKSTORE END********")
