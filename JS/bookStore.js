@@ -11,12 +11,12 @@ function bookCombos(a,b,c,d,e){
     // function for no undefined 
     const noUndefines = () =>{
         if(a===undefined){
-            bookArray[0]=2;
+            bookArray[0]=0;
         }
         else bookArray[0]=a;
 
         if(b===undefined){
-            bookArray[1]=2;
+            bookArray[1]=0;
         }
         else bookArray[1]=b;
 
@@ -144,8 +144,8 @@ function bookCombos(a,b,c,d,e){
     }
     
 }
-bookCombos(3,7,4);
+bookCombos(2,2,3,6,8);
 
-console.log("********BOOKSTORE END********")
+console.log("********BOOKSTORE END********");
 
 

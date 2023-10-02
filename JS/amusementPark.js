@@ -1,4 +1,4 @@
-console.log("********AMUSEMENT PARK START********")
+console.log("********AMUSEMENT PARK START********");
 
 let emptyLet;
 // Visitor array
@@ -100,4 +100,4 @@ const tickets = {
   console.log(gtcVersion(visitorNew));
   console.log(gtcVersion(visitorOld));
 
-console.log("********AMUSEMENT PARK END********")
+console.log("********AMUSEMENT PARK END********");

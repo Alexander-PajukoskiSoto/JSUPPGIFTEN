@@ -1,4 +1,4 @@
-console.log("********FREELANCE START********")
+console.log("********FREELANCE START********");
 
 // Define daily rate
 const dRate = hPay => 8*hPay;
@@ -18,5 +18,5 @@ const priceWithMonthlyDiscount = (hPay,day,discount) => Math.ceil((hPay*8)*(day%
 // print price with monthly discount
 console.log(priceWithMonthlyDiscount(89,230,.42))
 // OBS! Det går att lägga console.log i funktionen, men det kan vara enklare att använda till en hemsida eller något ifall det inte är det.
-console.log("********FREELANCE END********")
+console.log("********FREELANCE END********");
 

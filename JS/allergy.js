@@ -44,4 +44,4 @@ function allergyCheck(allergyScore)
 }
 // Prints above function
 console.log(allergyCheck(33));
-console.log("********ALLERGY END********")
+console.log("********ALLERGY END********");

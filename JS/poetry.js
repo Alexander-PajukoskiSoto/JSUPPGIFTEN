@@ -1,4 +1,4 @@
-console.log("********POETRY START********")
+console.log("********POETRY START********");
 // define front door resopnse function
 const frontDoorResponse = (poem) => poem.slice(0,1)
 // print front door responce function
@@ -26,4 +26,4 @@ const backDoorPassword = poem => poem + ", please";
 // Print polite
 console.log(backDoorPassword('Horse'));
 
-console.log("********POETRY END********")
+console.log("********POETRY END********");
