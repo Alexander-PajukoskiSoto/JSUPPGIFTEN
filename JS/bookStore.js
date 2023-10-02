@@ -8,6 +8,31 @@ const bestDisCombo = [0, 0];
 
 let bookCount = 0;
 function bookCombos(a,b,c,d,e){
+    // function for no undefined 
+    const noUndefines = () =>{
+        if(a===undefined){
+            bookArray[0]=2;
+        }
+        else bookArray[0]=a;
+
+        if(b===undefined){
+            bookArray[1]=2;
+        }
+        else bookArray[1]=b;
+
+        if(c===undefined){
+            bookArray[2]=0;
+        }
+        else bookArray[2]=c;
+        if(d===undefined){
+            bookArray[3]=0;
+        }
+        else bookArray[3]=d;
+        if(e===undefined){
+            bookArray[4]=0;
+        }
+        else bookArray[4]=e;
+    }
     // function for bookCombo 4-1
     const bookCombo4To1 = (a,b,c,d,e) => {
         while(bookArray[1]>0){
@@ -52,11 +77,7 @@ function bookCombos(a,b,c,d,e){
     
     console.log(bookCount + " BOOK COUNT");
     // Sets all values for looping-time B)
-    bookArray[0]=a;
-    bookArray[1]=b;
-    bookArray[2]=c;
-    bookArray[3]=d;
-    bookArray[4]=e;
+    noUndefines();
     bookArray.sort()
     for(items in bookArray){
         bookCount = bookCount + bookArray[arrayI];
@@ -81,11 +102,7 @@ function bookCombos(a,b,c,d,e){
         bookCombo4To1();
          
         // Sets all values for looping-time B) 2nd time 
-        bookArray[0]=a;
-        bookArray[1]=b;
-        bookArray[2]=c;
-        bookArray[3]=d;
-        bookArray[4]=e;
+        noUndefines();
         bookArray.sort()
         console.log(disCombo + " Combo:5-1");
 
@@ -117,6 +134,7 @@ function bookCombos(a,b,c,d,e){
     }
 
     const result =(Math.min.apply(Math, bestDisCombo) / bookCount)* (8*bookCount);
+
     //print cheapest cost with rounding
     if(result-Math.floor(result) >= .5){
         console.log("$" + Math.ceil(result))
@@ -126,7 +144,7 @@ function bookCombos(a,b,c,d,e){
     }
     
 }
-bookCombos(3,7,4,7,1);
+bookCombos(3,7,4);
 
 console.log("********BOOKSTORE END********")
 

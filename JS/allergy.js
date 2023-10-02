@@ -1,7 +1,7 @@
-console.log("********ALLERGY START********")
-
+console.log("********ALLERGY START********");
 // Empty string for results
 let allergyResult = "";
+
 // Function checks allergy by removing different values from whole value
 function allergyCheck(allergyScore)
 {
