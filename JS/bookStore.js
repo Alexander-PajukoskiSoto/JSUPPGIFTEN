@@ -87,7 +87,6 @@ function bookCombos(a,b,c,d,e){
         bookArray[3]=d;
         bookArray[4]=e;
         bookArray.sort()
-        console.log("ends here")
         console.log(disCombo + " Combo:5-1");
 
         // Adds sums of discounts to new array
@@ -104,7 +103,6 @@ function bookCombos(a,b,c,d,e){
         };
         // resets for next time
         bookArray = [0,0,0,0,0];
-
         // Left for teacher
         console.log(bookArray + " not a repeat");
         // Left for teacher
@@ -121,13 +119,15 @@ function bookCombos(a,b,c,d,e){
     const result =(Math.min.apply(Math, bestDisCombo) / bookCount)* (8*bookCount);
     //print cheapest cost with rounding
     if(result-Math.floor(result) >= .5){
-        console.log(Math.ceil(result))
+        console.log("$" + Math.ceil(result))
     }
     else{
-        console.log(Math.floor(result))
+        console.log("$" + Math.floor(result))
     }
     
 }
 bookCombos(3,7,4,7,1);
 
 console.log("********BOOKSTORE END********")
+
+
